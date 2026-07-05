@@ -22,13 +22,7 @@ El Niño Southern Oscillation (ENSO) is one of the critical factors causing glob
 - CMIP6 pretraining and NOAA OISST v2.1 fine-tuning/evaluation.
 - CLA spatial module with center aware linear attention.
 - TLM temporal module based on long-short gated Mamba dynamics.
-- SPC loss:
-
-\[
-\mathcal{L}_{SPC}=1.0\cdot\mathcal{L}_{MSE}+0.2\cdot\mathcal{L}_{pattern}
-\]
-
-where \(\mathcal{L}_{pattern}=1-r_s\), and \(r_s\) is the spatial correlation averaged over batch samples and lead months.
+- SPC loss.
 
 
 ## Datasets
