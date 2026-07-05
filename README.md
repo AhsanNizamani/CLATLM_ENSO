@@ -10,7 +10,7 @@ The main model is **CLATLM**, an ENSO forecasting framework that combines:
 - **Temporal Long-Short Mamba (TLM)** for efficient long-range temporal dependency modeling without autoregressive rollouts.
 - **Spatial Pattern and Content (SPC) Loss**, which combines MSE content fidelity with a spatial correlation term.
 
-![CLATLM architecture](assets/Figure_1.png)
+![CLATLM architecture](Figure_1.png)
 
 ## Abstract
 
