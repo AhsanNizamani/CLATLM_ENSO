@@ -1,0 +1,19 @@
+name: spc-cla-tlm-enso
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=11.8
+  - numpy
+  - pandas
+  - xarray
+  - netcdf4
+  - cftime
+  - scipy
+  - matplotlib
+  - tqdm
+  - pyyaml
+  - scikit-image

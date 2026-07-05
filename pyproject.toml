@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clatlm-enso"
+version = "0.1.0"
+description = "CLATLM for ENSO forecasting"
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.setuptools]
+packages = ["src", "src.models"]
