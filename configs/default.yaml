@@ -1,0 +1,76 @@
+project:
+  name: CLATLM-ENSO
+  out_dir: results/CLATLM_ENSO
+  seed: 42
+
+data:
+  # Initial pretraining data
+  cmip6_path: data/CMIP6_tos_Omon_MIROC-ES2L_historical_r1i1p1f2_gr1_185001-201412.nc
+  cmip6_var_name: tos
+
+  # Fine-tuning and testing data: NOAA OISST v2.1 monthly SST
+  oisst_path: data/NOAA_OISST_v2_1/sst.mnmean.nc
+  oisst_var_name: sst
+
+  # Default region: Niño3.4, 5S-5N, 170W-120W = 190E-240E
+  lat_bounds: [-5.0, 5.0]
+  lon_bounds: [190.0, 240.0]
+  target_res_deg: 2.5
+  oisst_finetune_fraction: 0.70
+  input_months: 12
+  output_months: 24
+  stride: 1
+  val_ratio: 0.30
+  cache: true
+  force_rebuild_cache: false
+
+model:
+  name: CLATLM
+  in_channels: 1
+  embed_dim: 16
+  encoder_kernel: 3
+  downsample: true
+  H_ds: 16
+  W_ds: 16
+  heads: 4
+  cla_num_features: 256
+  cla_max_features: 256
+  cla_tau: 6.0
+  cla_beta_init: 5.0
+  cla_lam_init: 0.8
+  cla_p_drop: 0.05
+  tlm_blocks: 1
+  tlm_n_layers: 2
+  tlm_d_state: 64
+  tlm_d_conv: 1
+  tlm_use_gates: true
+  tlm_gate_activation: sigmoid
+  ctx_tokens: 4
+  dual_head_decoder: true
+
+loss:
+  name: Spatial Pattern and Content Loss
+  abbreviation: SPC
+  mse_weight: 1.0
+  spatial_pattern_weight: 0.2
+
+training:
+  pretrain_epochs: 100
+  finetune_epochs: 50
+  batch_size: 64
+  learning_rate: 0.0001
+  finetune_learning_rate: 0.00005
+  weight_decay: 0.01
+  use_amp: true
+  amp_dtype: bfloat16
+  num_workers: 0
+  grad_clip: null
+  early_stopping: false
+
+metrics:
+  - RMSE
+  - MAE
+  - PCC
+  - R2
+  - SSIM
+  - ACC
