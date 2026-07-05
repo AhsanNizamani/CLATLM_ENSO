@@ -12,9 +12,6 @@ The main model is **CLATLM**, an ENSO forecasting framework that combines:
 
 ![CLATLM architecture](Figure_1.png)
 
-## Abstract
-
-El Niño Southern Oscillation (ENSO) is one of the critical factors causing global climate extremes and ecosystem turbulence. It frequently causes floods, droughts, and excessive rainfall all across the world. Accurate long lead ENSO forecasting is essential, however it is difficult due to seasonal barriers, nonstationary temporal and time varying spatial correlations. We propose a deep fusion architecture, **Center aware Linear Attention with Temporal Long-short Mamba (CLATLM)**, for accurate long lead ENSO forecasting. CLATLM combines a **Center aware Linear Attention (CLA)** module, which learns adaptive spatial center of action with linear time attention, and a **Temporal Long-short Mamba (TLM)** module that captures long range temporal dependencies without autoregressive rollouts. To better align optimization, we introduce a **Spatial Pattern and Content (SPC) loss** that enhances standard loss with spatial correlation term. We construct a fused spatiotemporal dataset using CMIP6 simulations for pretraining and NOAA OISST v2.1 for fine tuning and evaluation. The proposed model achieves strong predictive performance while maintaining efficient inference.
 
 ## Highlights
 
@@ -74,4 +71,4 @@ python scripts/run_full_pipeline.py --config configs/default.yaml
 
 ## License
 
-This repository is released under the MIT License unless otherwise changed by the authors.
+This project is licensed under the MIT License.
