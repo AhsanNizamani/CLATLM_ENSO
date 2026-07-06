@@ -12,7 +12,7 @@ from src.plotting import plot_lead_metrics, plot_nino34_selected_leads, plot_mon
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results", default="results/SPC_CLA_TLM_ENSO")
+    parser.add_argument("--results", default="results/CLATLM_ENSO")
     args = parser.parse_args()
     out_dir = Path(args.results)
 
