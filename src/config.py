@@ -16,7 +16,7 @@ class ProjectConfig:
 
 @dataclass
 class DataConfig:
-    cmip6_path: str = "data/CMIP6_tos_Omon_MIROC-ES2L_historical_r1i1p1f2_gr1_185001-201412.nc"
+    cmip6_path: str = "data/CMIP6_Nino34_SSTA_Multimodel_185001-201412.nc"
     cmip6_var_name: str = "tos"
     oisst_path: str = "data/NOAA_OISST_v2_1/sst.mnmean.nc"
     oisst_var_name: str = "sst"
@@ -69,7 +69,7 @@ class LossConfig:
 class TrainingConfig:
     pretrain_epochs: int = 100
     finetune_epochs: int = 50
-    batch_size: int = 32
+    batch_size: int = 64
     learning_rate: float = 1e-4
     finetune_learning_rate: float = 5e-5
     weight_decay: float = 1e-2
