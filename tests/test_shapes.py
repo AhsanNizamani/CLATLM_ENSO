@@ -6,7 +6,7 @@ from src.losses import SPCLoss
 
 def test_model_forward_shape():
     model = CLATLM(embed_dim=16, H_ds=16, W_ds=16, T_out=24, H=40, W=200)
-    x = torch.randn(2, 12, 40, 200)
+    x = torch.randn(2, 24, 40, 200)
     y = model(x)
     assert y.shape == (2, 24, 40, 200)
 
