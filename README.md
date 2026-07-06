@@ -26,14 +26,14 @@ The main model is **CLATLM**, an ENSO forecasting framework that combines:
 
 This repository is configured for:
 
-1. **CMIP6 MIROC-ES2L historical `tos`** for pretraining.
+1. **CMIP6 Multimodel historical `tos`** for pretraining.
 2. **NOAA OISST v2.1 monthly SST** for fine-tuning and testing.
 
 Data files are not included because NetCDF climate datasets are large. Place files as follows, or edit `configs/default.yaml`:
 
 ```text
 data/
-├── CMIP6_tos_Omon_MIROC-ES2L_historical_r1i1p1f2_gr1_185001-201412.nc
+├── CMIP6_Nino34_SSTA_Multimodel_185001-201412.nc
 └── NOAA_OISST_v2_1/
     └── sst.mnmean.nc
 ```
